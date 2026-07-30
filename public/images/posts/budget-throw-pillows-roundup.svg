@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
-  <rect width="1200" height="800" fill="#EBEEE3"/>
-  <rect x="140" y="260" width="260" height="260" rx="24" fill="#9BAB7C" transform="rotate(-6 270 390)"/><rect x="440" y="240" width="260" height="260" rx="24" fill="#C68F6B" transform="rotate(4 570 370)"/><rect x="740" y="270" width="260" height="260" rx="24" fill="#647549" transform="rotate(-3 870 400)"/>
-  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Shopping Guides</text>
-</svg>

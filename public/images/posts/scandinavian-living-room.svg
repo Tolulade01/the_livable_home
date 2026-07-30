@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
-  <rect width="1200" height="800" fill="#F6F7F2"/>
-  <rect x="0" y="0" width="1200" height="800" fill="#F6F7F2"/><rect x="90" y="90" width="1020" height="620" fill="none" stroke="#B9C4A0" stroke-width="2"/><rect x="200" y="420" width="500" height="200" rx="14" fill="#EBEEE3" stroke="#9BAB7C" stroke-width="2"/><circle cx="880" cy="300" r="120" fill="#D6DCC6"/>
-  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Style Guides</text>
-</svg>
