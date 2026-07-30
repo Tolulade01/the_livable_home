@@ -72,8 +72,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="mx-auto max-w-content px-5 py-12 md:px-8">
-      {/* eslint-disable-next-line react/no-danger */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="mx-auto max-w-prose">
         {category && (
