@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgPil" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3F5EE"/>
+      <stop offset="100%" stop-color="#E4E9D8"/>
+    </linearGradient>
+    <filter id="softPil" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgPil)"/>
+  <circle cx="180" cy="620" r="220" fill="#9BAB7C" opacity="0.35" filter="url(#softPil)"/>
+  <g transform="rotate(-8 300 400)">
+    <rect x="150" y="270" width="300" height="260" rx="30" fill="#9BAB7C"/>
+    <path d="M150,300 Q300,260 450,300 L450,270 Q300,230 150,270 Z" fill="#7C905E"/>
+  </g>
+  <g transform="rotate(5 620 380)">
+    <rect x="480" y="250" width="280" height="280" rx="140" fill="#C68F6B"/>
+  </g>
+  <g transform="rotate(-4 900 400)">
+    <rect x="770" y="280" width="290" height="250" rx="24" fill="#647549"/>
+    <circle cx="915" cy="405" r="18" fill="#D6DCC6" opacity="0.6"/>
+    <circle cx="855" cy="345" r="18" fill="#D6DCC6" opacity="0.6"/>
+    <circle cx="975" cy="465" r="18" fill="#D6DCC6" opacity="0.6"/>
+  </g>
+  <g font-family="'Cormorant Garamond', Georgia, serif" fill="#4F5C3A">
+    <rect x="40" y="700" width="260" height="52" rx="26" fill="#FBFAF6" opacity="0.9"/>
+    <text x="66" y="734" font-size="24" letter-spacing="0.5">Shopping Guides</text>
+  </g>
+</svg>

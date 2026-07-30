@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgKit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6F7F2"/>
+      <stop offset="100%" stop-color="#E9EEDF"/>
+    </linearGradient>
+    <filter id="softKit" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgKit)"/>
+  <circle cx="200" cy="150" r="200" fill="#C68F6B" opacity="0.25" filter="url(#softKit)"/>
+  <rect x="0" y="500" width="1200" height="300" fill="#D6DCC6"/>
+  <rect x="120" y="260" width="960" height="240" rx="14" fill="#B9C4A0"/>
+  <rect x="140" y="280" width="200" height="200" rx="10" fill="#A7B48A" opacity="0.7"/>
+  <rect x="360" y="280" width="200" height="200" rx="10" fill="#A7B48A" opacity="0.7"/>
+  <rect x="580" y="280" width="200" height="200" rx="10" fill="#A7B48A" opacity="0.7"/>
+  <rect x="800" y="280" width="260" height="200" rx="10" fill="#A7B48A" opacity="0.7"/>
+  <rect x="120" y="500" width="960" height="30" fill="#647549"/>
+  <circle cx="230" cy="380" r="10" fill="#C68F6B"/>
+  <circle cx="450" cy="380" r="10" fill="#C68F6B"/>
+  <circle cx="670" cy="380" r="10" fill="#C68F6B"/>
+  <circle cx="920" cy="380" r="10" fill="#C68F6B"/>
+  <line x1="300" y1="100" x2="300" y2="230" stroke="#8E9A75" stroke-width="4"/>
+  <ellipse cx="300" cy="245" rx="42" ry="20" fill="#D9A05B"/>
+  <line x1="600" y1="80" x2="600" y2="210" stroke="#8E9A75" stroke-width="4"/>
+  <ellipse cx="600" cy="225" rx="42" ry="20" fill="#D9A05B"/>
+  <line x1="900" y1="100" x2="900" y2="230" stroke="#8E9A75" stroke-width="4"/>
+  <ellipse cx="900" cy="245" rx="42" ry="20" fill="#D9A05B"/>
+  <g font-family="'Cormorant Garamond', Georgia, serif" fill="#4F5C3A">
+    <rect x="40" y="700" width="330" height="52" rx="26" fill="#FBFAF6" opacity="0.9"/>
+    <text x="66" y="734" font-size="24" letter-spacing="0.5">Small Space &amp; Rentals</text>
+  </g>
+</svg>

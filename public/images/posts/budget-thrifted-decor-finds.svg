@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgThr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFAF6"/>
+      <stop offset="100%" stop-color="#EFE7DA"/>
+    </linearGradient>
+    <filter id="softThr" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgThr)"/>
+  <circle cx="950" cy="250" r="220" fill="#C68F6B" opacity="0.3" filter="url(#softThr)"/>
+  <rect x="140" y="150" width="220" height="280" rx="8" fill="#EBEEE3" stroke="#B9C4A0" stroke-width="3"/>
+  <rect x="180" y="190" width="140" height="200" fill="#D6DCC6"/>
+  <rect x="400" y="220" width="220" height="280" rx="8" fill="#EBEEE3" stroke="#C68F6B" stroke-width="3" transform="rotate(4 510 360)"/>
+  <rect x="440" y="260" width="140" height="200" fill="#E3B48D" transform="rotate(4 510 360)"/>
+  <path d="M760,470 C740,420 760,380 800,370 C830,340 880,350 890,390 C920,400 930,440 900,460 C900,490 860,510 830,495 C800,510 770,500 760,470 Z" fill="#647549"/>
+  <rect x="810" y="470" width="40" height="70" fill="#B9C4A0"/>
+  <circle cx="1040" cy="470" r="60" fill="#C68F6B" opacity="0.85"/>
+  <rect x="1000" y="470" width="80" height="90" rx="6" fill="#9BAB7C" opacity="0.9"/>
+  <g font-family="'Cormorant Garamond', Georgia, serif" fill="#4F5C3A">
+    <rect x="40" y="700" width="190" height="52" rx="26" fill="#FBFAF6" opacity="0.9"/>
+    <text x="66" y="734" font-size="24" letter-spacing="0.5">Budget &amp; DIY</text>
+  </g>
+</svg>

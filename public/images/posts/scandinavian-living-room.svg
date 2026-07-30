@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAFAF7"/>
+      <stop offset="100%" stop-color="#EEF0E7"/>
+    </linearGradient>
+    <filter id="softScan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgScan)"/>
+  <circle cx="880" cy="260" r="220" fill="#D6DCC6" opacity="0.55" filter="url(#softScan)"/>
+  <rect x="90" y="90" width="1020" height="620" fill="none" stroke="#B9C4A0" stroke-width="2" opacity="0.6"/>
+  <g transform="translate(300,300)">
+    <path d="M0,220 L0,140 C0,90 40,60 90,60 C140,60 180,90 180,140 L180,220" fill="none" stroke="#647549" stroke-width="10" stroke-linecap="round"/>
+    <line x1="0" y1="220" x2="0" y2="270" stroke="#647549" stroke-width="10" stroke-linecap="round"/>
+    <line x1="180" y1="220" x2="180" y2="270" stroke="#647549" stroke-width="10" stroke-linecap="round"/>
+    <rect x="-10" y="150" width="200" height="20" rx="10" fill="#9BAB7C"/>
+  </g>
+  <path d="M700,470 C690,410 720,360 780,360 C800,320 860,320 880,360 C930,370 940,430 900,460 C910,500 860,520 820,500 C780,520 730,510 700,470 Z" fill="#C68F6B"/>
+  <rect x="795" y="470" width="22" height="60" fill="#8E6A4A"/>
+  <g font-family="'Cormorant Garamond', Georgia, serif" fill="#4F5C3A">
+    <rect x="40" y="700" width="200" height="52" rx="26" fill="#FBFAF6" opacity="0.9"/>
+    <text x="66" y="734" font-size="24" letter-spacing="0.5">Style Guides</text>
+  </g>
+</svg>
