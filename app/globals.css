@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-sage-200;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+  ::selection {
+    @apply bg-sage-300 text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.clay.500");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* The pinned-card signature: post cards sit like photos on a moodboard —
+     a whisper of rotation that straightens on hover, echoing how the reader
+     actually uses the site (saving, arranging, rearranging). */
+  .pin-card {
+    transform: rotate(var(--pin-rotate, -0.6deg));
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease;
+  }
+  .pin-card:hover,
+  .pin-card:focus-within {
+    transform: rotate(0deg) translateY(-3px);
+  }
+
+  .prose-post {
+    @apply text-[1.0625rem] leading-[1.75] text-sage-900;
+  }
+  .prose-post p {
+    @apply mb-6;
+  }
+  .prose-post h2 {
+    @apply font-display text-3xl md:text-[2.25rem] leading-tight text-sage-900 mt-14 mb-5;
+  }
+  .prose-post h3 {
+    @apply font-display text-2xl leading-snug text-sage-900 mt-10 mb-4;
+  }
+  .prose-post ul,
+  .prose-post ol {
+    @apply mb-6 pl-5 space-y-2;
+  }
+  .prose-post ul {
+    @apply list-disc;
+  }
+  .prose-post ol {
+    @apply list-decimal;
+  }
+  .prose-post a {
+    @apply text-sage-700 underline decoration-sage-300 underline-offset-4 hover:decoration-sage-600;
+  }
+  .prose-post img {
+    @apply rounded-lg my-8;
+  }
+  .prose-post blockquote {
+    @apply border-l-2 border-clay-400 pl-5 italic text-sage-800 my-8;
+  }
+  .prose-post strong {
+    @apply text-sage-900 font-semibold;
+  }
+
+  .eyebrow {
+    @apply font-body text-xs font-semibold tracking-widest2 uppercase text-sage-600;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-sage-700 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:bg-sage-800;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded border border-sage-400 px-5 py-3 text-sm font-semibold text-sage-800 transition-colors hover:border-sage-600 hover:bg-sage-100;
+  }
+}
