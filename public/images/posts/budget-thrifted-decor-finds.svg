@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FBFAF6"/>
+  <rect x="150" y="150" width="300" height="420" rx="8" fill="#EBEEE3" stroke="#B9C4A0" stroke-width="3"/><rect x="500" y="260" width="260" height="300" rx="8" fill="#D6DCC6"/><circle cx="920" cy="330" r="150" fill="#C68F6B" opacity="0.75"/>
+  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Budget & DIY</text>
+</svg>

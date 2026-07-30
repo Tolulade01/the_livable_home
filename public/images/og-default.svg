@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F6F7F2"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#D6DCC6" stroke-width="18"/>
+  <circle cx="600" cy="235" r="10" fill="#C68F6B"/>
+  <text x="600" y="330" font-family="Georgia, serif" font-style="italic" font-size="72" fill="#2B3324" text-anchor="middle">The Livable Home</text>
+  <text x="600" y="385" font-family="Georgia, serif" font-size="26" fill="#647549" text-anchor="middle">A home that feels like yours, one room at a time</text>
+</svg>

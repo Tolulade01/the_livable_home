@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FBFAF6"/>
+  <rect x="0" y="560" width="1200" height="240" fill="#D6DCC6"/><circle cx="260" cy="360" r="140" fill="#C68F6B"/><circle cx="620" cy="300" r="90" fill="#B27A56" opacity="0.85"/><rect x="820" y="240" width="220" height="320" rx="10" fill="#9BAB7C"/>
+  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Seasonal</text>
+</svg>

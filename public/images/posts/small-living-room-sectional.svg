@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#EBEEE3"/>
+  <circle cx="900" cy="230" r="230" fill="#D6DCC6"/><rect x="140" y="430" width="620" height="230" rx="18" fill="#9BAB7C"/><rect x="140" y="430" width="620" height="40" rx="18" fill="#7C905E"/><circle cx="980" cy="600" r="90" fill="#C68F6B" opacity="0.85"/>
+  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Room-by-Room</text>
+</svg>

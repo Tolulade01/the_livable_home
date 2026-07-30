@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#F6F7F2"/>
+  <rect x="0" y="500" width="1200" height="300" fill="#D6DCC6"/><rect x="120" y="260" width="960" height="240" rx="10" fill="#B9C4A0"/><rect x="120" y="500" width="960" height="26" fill="#647549"/><circle cx="300" cy="380" r="16" fill="#C68F6B"/><circle cx="900" cy="380" r="16" fill="#C68F6B"/>
+  <text x="40" y="756" font-family="Georgia, serif" font-size="22" fill="#4F5C3A" opacity="0.55">Small Space & Rentals</text>
+</svg>
