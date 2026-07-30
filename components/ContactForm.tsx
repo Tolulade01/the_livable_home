@@ -57,7 +57,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="reason" className="mb-1.5 block text-sm font-medium text-sage-800">
-          What's this about?
+          What&apos;s this about?
         </label>
         <select
           id="reason"
