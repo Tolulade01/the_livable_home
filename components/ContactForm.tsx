@@ -3,16 +3,34 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Wire this up to an API route (e.g. app/api/contact/route.ts) that sends
-    // through Resend, Postmark, or a forwarding service like Formspree.
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setStatus("success");
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   }
 
   if (status === "success") {
@@ -88,6 +106,10 @@ export default function ContactForm() {
       <button type="submit" className="btn-primary" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Send message"}
       </button>
+
+      {status === "error" && (
+        <p className="text-sm text-red-700">{errorMessage}</p>
+      )}
     </form>
   );
 }

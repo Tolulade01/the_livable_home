@@ -14,18 +14,33 @@ export default function NewsletterForm({
   headline = "Get the free room-planning checklist",
   subtext = "One email a week. New posts, real budgets, no fluff.",
 }: NewsletterFormProps) {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email) return;
     setStatus("submitting");
+    setErrorMessage("");
 
-    // Wire this up to MailerLite / ConvertKit's API route or embed action.
-    // siteConfig.newsletter.formAction holds the configured endpoint.
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setStatus("success");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
   }
 
   if (variant === "footer") {
@@ -84,6 +99,9 @@ export default function NewsletterForm({
             {status === "submitting" ? "Sending..." : "Send it to me"}
           </button>
         </form>
+      )}
+      {status === "error" && (
+        <p className="mt-2 text-sm text-red-700">{errorMessage}</p>
       )}
       <p className="mt-3 text-xs text-sage-500">
         Provider: {siteConfig.newsletter.provider}. No spam, unsubscribe anytime.
