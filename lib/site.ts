@@ -15,10 +15,10 @@ export const siteConfig = {
     pinterest: "https://pinterest.com/thelivablehome",
     instagram: "https://instagram.com/thelivablehome",
   },
-  // Swap in your MailerLite / ConvertKit form action once connected.
+  // Newsletter is wired to Brevo via app/api/newsletter/route.ts
   newsletter: {
-    provider: "MailerLite",
-    formAction: "#",
+    provider: "Brevo",
+    formAction: "/api/newsletter",
   },
 };
 
