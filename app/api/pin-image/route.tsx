@@ -35,6 +35,8 @@ export async function GET(req: NextRequest) {
 
   const imagePath = searchParams.get("image");
   const text = searchParams.get("text");
+  const kicker = searchParams.get("kicker") || ""; // optional small label above the headline, e.g. "SMALL SPACE IDEAS"
+  const accent = searchParams.get("accent") === "clay" ? "#8A5A3B" : "#3A4A28"; // deep sage (default) or deep clay block color
 
   if (!imagePath || !text) {
     return new Response(
@@ -47,14 +49,15 @@ export async function GET(req: NextRequest) {
     ? imagePath
     : `${origin}${imagePath.startsWith("/") ? "" : "/"}${imagePath}`;
 
-  // Subset the fonts to only the characters actually needed, keeping the
-  // request fast. Combine the overlay text with the brand name for the
-  // wordmark, plus a couple of characters we always need (space, ellipsis).
   const brandText = "THE LIVABLE HOME";
-  const [headlineFont, brandFont] = await Promise.all([
-    loadGoogleFont("Cormorant Garamond", 600, text + "…"),
+  const fontSubsetText = text + kicker + brandText + "…";
+  const [headlineFont, brandFont, kickerFont] = await Promise.all([
+    loadGoogleFont("Cormorant Garamond", 700, fontSubsetText),
     loadGoogleFont("DM Sans", 500, brandText),
+    loadGoogleFont("DM Sans", 700, fontSubsetText),
   ]);
+
+  const blockHeight = kicker ? 460 : 400;
 
   return new ImageResponse(
     (
@@ -67,60 +70,49 @@ export async function GET(req: NextRequest) {
           fontFamily: "DM Sans",
         }}
       >
-        {/* Base photo, full bleed */}
+        {/* Base photo, top portion only, full bleed */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={absoluteImageUrl}
           width={1000}
-          height={1500}
+          height={1500 - blockHeight + 60}
           style={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "1000px",
-            height: "1500px",
+            height: `${1500 - blockHeight + 60}px`,
             objectFit: "cover",
           }}
         />
 
-        {/* Gradient scrim for text legibility, bottom-weighted */}
+        {/* Brand wordmark, top left, over the photo */}
         <div
           style={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "1000px",
-            height: "1500px",
-            background:
-              "linear-gradient(to bottom, rgba(30,35,20,0) 40%, rgba(25,30,18,0.55) 68%, rgba(20,24,14,0.85) 100%)",
-            display: "flex",
-          }}
-        />
-
-        {/* Brand wordmark, top left */}
-        <div
-          style={{
-            position: "absolute",
-            top: "56px",
-            left: "56px",
+            top: "48px",
+            left: "48px",
             display: "flex",
             alignItems: "center",
+            background: "rgba(20,24,14,0.45)",
+            padding: "10px 18px",
+            borderRadius: "999px",
           }}
         >
           <div
             style={{
-              width: "10px",
-              height: "10px",
+              width: "8px",
+              height: "8px",
               borderRadius: "999px",
-              background: "#C68F6B",
-              marginRight: "12px",
+              background: "#E3B48D",
+              marginRight: "10px",
               display: "flex",
             }}
           />
           <div
             style={{
               fontFamily: "DM Sans",
-              fontSize: "22px",
+              fontSize: "18px",
               fontWeight: 500,
               letterSpacing: "2px",
               color: "#FBF8F2",
@@ -131,22 +123,42 @@ export async function GET(req: NextRequest) {
           </div>
         </div>
 
-        {/* Headline text, bottom third */}
+        {/* Solid color block, bottom, full width - the high-contrast scannable part */}
         <div
           style={{
             position: "absolute",
-            bottom: "72px",
-            left: "56px",
-            right: "56px",
+            bottom: 0,
+            left: 0,
+            width: "1000px",
+            height: `${blockHeight}px`,
+            background: accent,
             display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "0 56px",
           }}
         >
+          {kicker && (
+            <div
+              style={{
+                fontFamily: "DM Sans",
+                fontWeight: 700,
+                fontSize: "26px",
+                letterSpacing: "3px",
+                color: "#E3B48D",
+                marginBottom: "20px",
+                display: "flex",
+              }}
+            >
+              {kicker.toUpperCase()}
+            </div>
+          )}
           <div
             style={{
               fontFamily: "Cormorant Garamond",
-              fontWeight: 600,
-              fontSize: text.length > 45 ? "58px" : "72px",
-              lineHeight: 1.12,
+              fontWeight: 700,
+              fontSize: text.length > 45 ? "72px" : "88px",
+              lineHeight: 1.08,
               color: "#FBF8F2",
               display: "flex",
             }}
@@ -160,8 +172,9 @@ export async function GET(req: NextRequest) {
       width: 1000,
       height: 1500,
       fonts: [
-        { name: "Cormorant Garamond", data: headlineFont, weight: 600, style: "normal" },
+        { name: "Cormorant Garamond", data: headlineFont, weight: 700, style: "normal" },
         { name: "DM Sans", data: brandFont, weight: 500, style: "normal" },
+        { name: "DM Sans", data: kickerFont, weight: 700, style: "normal" },
       ],
     }
   );
