@@ -123,6 +123,19 @@ export async function GET(req: NextRequest) {
           </div>
         </div>
 
+        {/* Thin accent divider at the photo/color-block seam */}
+        <div
+          style={{
+            position: "absolute",
+            top: `${1500 - blockHeight - 1}px`,
+            left: 0,
+            width: "1000px",
+            height: "4px",
+            background: accent === "#8A5A3B" ? "#E3B48D" : "#9BAB7C",
+            display: "flex",
+          }}
+        />
+
         {/* Solid color block, bottom, full width - the high-contrast scannable part */}
         <div
           style={{
