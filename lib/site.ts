@@ -5,7 +5,7 @@ export const siteConfig = {
     "Room-by-room styling advice, small-space and rental solutions, budget decorating, style deep-dives, and shoppable roundups for real rooms with real budgets.",
   // Update this once a custom domain is attached. Used for canonical URLs,
   // sitemap.xml, robots.txt, and Open Graph tags.
-  url: "https://thelivablehome.vercel.app",
+  url: "https://the-livable-home.vercel.app",
   ogImage: "/images/og-default.svg",
   author: {
     name: "Maren Ellis",
