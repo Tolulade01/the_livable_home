@@ -22,6 +22,9 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  verification: {
+    google: "O00KzEIQO-K6mDSLqJWGzYJ0unUa4UaeA6AKTpTPb-8",
+  },
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
